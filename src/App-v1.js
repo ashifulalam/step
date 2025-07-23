@@ -12,7 +12,7 @@ export default function App() {
 
   function handlePrevious() {
     if (step > 1) {
-      setStep((s) => s - 1);
+      setStep((s) => s-1);
     }
   }
 
@@ -23,6 +23,7 @@ export default function App() {
   }
 
   return (
+ 
     <>
       <button className="close" onClick={() => setIsOpen(!isOpen)}>
         &#10006;
@@ -41,34 +42,22 @@ export default function App() {
           </p>
 
           <div className="buttons">
-            <Button
-              bagColor="#7950f2"
-              textColor="#fff"
+            <button
+              style={{ backgroundColor: "#7950f2", color: "#fff" }}
               onClick={handlePrevious}
-              text="Previous"
-            />
+            >
+              Previous
+            </button>
 
-            <Button
-              bagColor="#7950f2"
-              textColor="#fff"
+            <button
+              style={{ backgroundColor: "#7950f2", color: "#fff" }}
               onClick={handleNext}
-              text="Next"
-            />
-
+            >
+              Next
+            </button>
           </div>
         </div>
       )}
     </>
-  );
-}
-
-function Button({ textColor, bagColor, onClick, text }) {
-  return (
-    <button
-      style={{ backgroundColor: bagColor, color: textColor }}
-      onClick={onClick}
-    >
-      {text}
-    </button>
   );
 }
