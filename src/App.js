@@ -45,16 +45,13 @@ export default function App() {
               bagColor="#7950f2"
               textColor="#fff"
               onClick={handlePrevious}
-              text="Previous"
-            />
+            >
+              <span>👈🏻</span> Previous
+            </Button>
 
-            <Button
-              bagColor="#7950f2"
-              textColor="#fff"
-              onClick={handleNext}
-              text="Next"
-            />
-
+            <Button bagColor="#7950f2" textColor="#fff" onClick={handleNext}>
+              Next <span>👉🏻</span>
+            </Button>
           </div>
         </div>
       )}
@@ -62,13 +59,13 @@ export default function App() {
   );
 }
 
-function Button({ textColor, bagColor, onClick, text }) {
+function Button({ textColor, bagColor, onClick, text, emoji, children }) {
   return (
     <button
       style={{ backgroundColor: bagColor, color: textColor }}
       onClick={onClick}
     >
-      {text}
+      {children}
     </button>
   );
 }
